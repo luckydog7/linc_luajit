@@ -19,7 +19,12 @@
         <section if="linux">
             <lib name='${LINC_LUA_PATH}/lib/Lua/lib/Linux64/libluajit.so' if='HXCPP_M64' />
             <!-- <lib name='${LINC_LUA_PATH}/lib/Lua/lib/Linux/libluajit.so' if='HXCPP_M32' /> -->
-</section>
+        </section>
+        <section if="android">
+            <lib name='${LINC_LUA_PATH}ndll/Android/libluajit-v7.so' if='HXCPP_ARMV7' />
+            <!-- <lib name='${LINC_LUA_PATH}lib/Lua/lib/Android/arm64/libluajit.a' if='HXCPP_ARM64' /> i think 64 not working, I THINK-->
+            <lib name='${LINC_LUA_PATH}ndll/Android/libluajit-64.so' if='HXCPP_X86' />
+        </section>
     </target>
 
 </xml>
